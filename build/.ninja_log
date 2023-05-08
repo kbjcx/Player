@@ -1,22 +1,9 @@
 # ninja log v5
-1	122	0	CMakeFiles/player_autogen	305c3994c62bda3b
-1	122	0	player_autogen/mocs_compilation.cpp	305c3994c62bda3b
-1	122	0	E:/CPP/Player/build/CMakeFiles/player_autogen	305c3994c62bda3b
-123	1876	7043021625738702	CMakeFiles/player.dir/main.cpp.obj	3cfa57e6c6022f3f
-1	122	0	E:/CPP/Player/build/player_autogen/mocs_compilation.cpp	305c3994c62bda3b
-127	209	7043021609066447	CMakeFiles/player.dir/player_autogen/mocs_compilation.cpp.obj	4dc025e8844cc010
-1879	2028	7043021627232915	player.exe	352a910c6f3995b0
-4	326	0	CMakeFiles/player_autogen	305c3994c62bda3b
-4	326	0	player_autogen/mocs_compilation.cpp	305c3994c62bda3b
-4	326	0	E:/CPP/Player/build/CMakeFiles/player_autogen	305c3994c62bda3b
-4	326	0	E:/CPP/Player/build/player_autogen/mocs_compilation.cpp	305c3994c62bda3b
-331	1231	7043025555480213	CMakeFiles/player.dir/player_autogen/mocs_compilation.cpp.obj	b6190401266efc47
-334	1247	7043025555636947	CMakeFiles/player.dir/widget.cpp.obj	4811f1802ceea66
-327	1358	7043025556766008	CMakeFiles/player.dir/main.cpp.obj	fa2ed4541faa550
-1359	1565	7043025558810790	player.exe	7efb761e1e7a6e81
 4	54	0	CMakeFiles/player_autogen	305c3994c62bda3b
 4	54	0	player_autogen/mocs_compilation.cpp	305c3994c62bda3b
 4	54	0	E:/CPP/Player/build/CMakeFiles/player_autogen	305c3994c62bda3b
-4	54	0	E:/CPP/Player/build/player_autogen/mocs_compilation.cpp	305c3994c62bda3b
 54	1067	7043026924434440	CMakeFiles/player.dir/main.cpp.obj	fa2ed4541faa550
+4	54	0	E:/CPP/Player/build/player_autogen/mocs_compilation.cpp	305c3994c62bda3b
+331	1231	7043025555480213	CMakeFiles/player.dir/player_autogen/mocs_compilation.cpp.obj	b6190401266efc47
+334	1247	7043025555636947	CMakeFiles/player.dir/widget.cpp.obj	4811f1802ceea66
 1067	1228	7043026926021904	player.exe	7efb761e1e7a6e81

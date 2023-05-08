@@ -53,7 +53,7 @@ build CMakeFiles/player.dir/player_autogen/mocs_compilation.cpp.obj: CXX_COMPILE
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles\player.dir\player_autogen\mocs_compilation.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
+  INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg4.4.4/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
   OBJECT_DIR = CMakeFiles\player.dir
   OBJECT_FILE_DIR = CMakeFiles\player.dir\player_autogen
 
@@ -61,7 +61,7 @@ build CMakeFiles/player.dir/main.cpp.obj: CXX_COMPILER__player_Debug E$:/CPP/Pla
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles\player.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
+  INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg4.4.4/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
   OBJECT_DIR = CMakeFiles\player.dir
   OBJECT_FILE_DIR = CMakeFiles\player.dir
 
@@ -69,7 +69,7 @@ build CMakeFiles/player.dir/widget.cpp.obj: CXX_COMPILER__player_Debug E$:/CPP/P
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles\player.dir\widget.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++11
-  INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
+  INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg4.4.4/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
   OBJECT_DIR = CMakeFiles\player.dir
   OBJECT_FILE_DIR = CMakeFiles\player.dir
 
@@ -84,7 +84,7 @@ build CMakeFiles/player.dir/widget.cpp.obj: CXX_COMPILER__player_Debug E$:/CPP/P
 build player.exe: CXX_EXECUTABLE_LINKER__player_Debug CMakeFiles/player.dir/player_autogen/mocs_compilation.cpp.obj CMakeFiles/player.dir/main.cpp.obj CMakeFiles/player.dir/widget.cpp.obj | F$:/QT/5.12.12/mingw73_64/lib/libQt5Widgetsd.a F$:/QT/5.12.12/mingw73_64/lib/libQt5Guid.a F$:/QT/5.12.12/mingw73_64/lib/libQt5Cored.a || player_autogen
   FLAGS = -g
   LINK_LIBRARIES = F:/QT/5.12.12/mingw73_64/lib/libQt5Widgetsd.a  -lavcodec  -lavdevice  -lavfilter  -lavformat  -lavutil  -lpostproc  -lswresample  -lswscale  F:/QT/5.12.12/mingw73_64/lib/libQt5Guid.a  F:/QT/5.12.12/mingw73_64/lib/libQt5Cored.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LE:/CPP/ffmpeg/lib
+  LINK_PATH = -LE:/CPP/ffmpeg4.4.4/lib
   OBJECT_DIR = CMakeFiles\player.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

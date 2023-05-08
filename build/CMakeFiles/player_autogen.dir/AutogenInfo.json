@@ -89,7 +89,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"E:/CPP/ffmpeg/include",
+		"E:/CPP/ffmpeg4.4.4/include",
 		"F:/QT/5.12.12/mingw73_64/include",
 		"F:/QT/5.12.12/mingw73_64/include/QtCore",
 		"F:/QT/5.12.12/mingw73_64/mkspecs/win32-g++",

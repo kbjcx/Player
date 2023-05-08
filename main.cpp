@@ -2,11 +2,12 @@
 #include <QPushButton>
 #include "widget.h"
 #include <QDebug>
+
 extern "C"{
-#include <libavcodec//avcodec.h>
-#include <libavformat/avformat.h>
-#include <libavutil/pixfmt.h>
-#include <libswscale/swscale.h>
+    #include <libavcodec//avcodec.h>
+    #include <libavformat/avformat.h>
+    #include <libavutil/pixfmt.h>
+    #include <libswscale/swscale.h>
 }
 /*!
  * 将获取的RGB信息写入文件生成图像
@@ -46,10 +47,13 @@ int main(int argc, char* argv[]) {
     int version =avformat_version();
     qDebug() << "version:" << version << endl;
     
-    char* file_path = "E:/CPP/QT/Source/test.mp4";
+    const char* file_path = "E:/CPP/QT/Source/test.mp4";
     
+    // 文件容器
     AVFormatContext* format_context;
+    // 编解码器容器
     AVCodecContext* codec_context;
+    // 编解码器
     AVCodec* codec;
     AVFrame* frame, frame_RGB;
     AVPacket* packet;
