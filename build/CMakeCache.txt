@@ -22,7 +22,7 @@ CMAKE_AR:FILEPATH=F:/QT/Tools/mingw730_64/bin/ar.exe
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable colored diagnostics throughout.
 CMAKE_COLOR_DIAGNOSTICS:BOOL=ON

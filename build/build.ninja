@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: player
-# Configurations: Debug
+# Configurations: Release
 # =============================================================================
 
 #############################################
@@ -24,7 +24,7 @@ ninja_required_version = 1.5
 #############################################
 # Set configuration variable for custom commands.
 
-CONFIGURATION = Debug
+CONFIGURATION = Release
 # =============================================================================
 # Include auxiliary files.
 
@@ -49,26 +49,34 @@ cmake_ninja_workdir = E$:/CPP/Player/build/
 
 build cmake_object_order_depends_target_player: phony || player_autogen
 
-build CMakeFiles/player.dir/player_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__player_Debug E$:/CPP/Player/build/player_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_player
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+build CMakeFiles/player.dir/player_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__player_Release E$:/CPP/Player/build/player_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_player
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles\player.dir\player_autogen\mocs_compilation.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg4.4.4/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
   OBJECT_DIR = CMakeFiles\player.dir
   OBJECT_FILE_DIR = CMakeFiles\player.dir\player_autogen
 
-build CMakeFiles/player.dir/main.cpp.obj: CXX_COMPILER__player_Debug E$:/CPP/Player/main.cpp || cmake_object_order_depends_target_player
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+build CMakeFiles/player.dir/main.cpp.obj: CXX_COMPILER__player_Release E$:/CPP/Player/main.cpp || cmake_object_order_depends_target_player
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles\player.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg4.4.4/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
   OBJECT_DIR = CMakeFiles\player.dir
   OBJECT_FILE_DIR = CMakeFiles\player.dir
 
-build CMakeFiles/player.dir/widget.cpp.obj: CXX_COMPILER__player_Debug E$:/CPP/Player/widget.cpp || cmake_object_order_depends_target_player
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+build CMakeFiles/player.dir/widget.cpp.obj: CXX_COMPILER__player_Release E$:/CPP/Player/widget.cpp || cmake_object_order_depends_target_player
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles\player.dir\widget.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++11
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always -std=gnu++11
+  INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg4.4.4/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles\player.dir
+  OBJECT_FILE_DIR = CMakeFiles\player.dir
+
+build CMakeFiles/player.dir/video_player.cpp.obj: CXX_COMPILER__player_Release E$:/CPP/Player/video_player.cpp || cmake_object_order_depends_target_player
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles\player.dir\video_player.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always -std=gnu++11
   INCLUDES = -IE:/CPP/Player/build/player_autogen/include -IE:/CPP/ffmpeg4.4.4/include -isystem F:/QT/5.12.12/mingw73_64/include -isystem F:/QT/5.12.12/mingw73_64/include/QtCore -isystem F:/QT/5.12.12/mingw73_64/./mkspecs/win32-g++ -isystem F:/QT/5.12.12/mingw73_64/include/QtGui -isystem F:/QT/5.12.12/mingw73_64/include/QtANGLE -isystem F:/QT/5.12.12/mingw73_64/include/QtWidgets
   OBJECT_DIR = CMakeFiles\player.dir
   OBJECT_FILE_DIR = CMakeFiles\player.dir
@@ -81,9 +89,9 @@ build CMakeFiles/player.dir/widget.cpp.obj: CXX_COMPILER__player_Debug E$:/CPP/P
 #############################################
 # Link the executable player.exe
 
-build player.exe: CXX_EXECUTABLE_LINKER__player_Debug CMakeFiles/player.dir/player_autogen/mocs_compilation.cpp.obj CMakeFiles/player.dir/main.cpp.obj CMakeFiles/player.dir/widget.cpp.obj | F$:/QT/5.12.12/mingw73_64/lib/libQt5Widgetsd.a F$:/QT/5.12.12/mingw73_64/lib/libQt5Guid.a F$:/QT/5.12.12/mingw73_64/lib/libQt5Cored.a || player_autogen
-  FLAGS = -g
-  LINK_LIBRARIES = F:/QT/5.12.12/mingw73_64/lib/libQt5Widgetsd.a  -lavcodec  -lavdevice  -lavfilter  -lavformat  -lavutil  -lpostproc  -lswresample  -lswscale  F:/QT/5.12.12/mingw73_64/lib/libQt5Guid.a  F:/QT/5.12.12/mingw73_64/lib/libQt5Cored.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+build player.exe: CXX_EXECUTABLE_LINKER__player_Release CMakeFiles/player.dir/player_autogen/mocs_compilation.cpp.obj CMakeFiles/player.dir/main.cpp.obj CMakeFiles/player.dir/widget.cpp.obj CMakeFiles/player.dir/video_player.cpp.obj | F$:/QT/5.12.12/mingw73_64/lib/libQt5Widgets.a F$:/QT/5.12.12/mingw73_64/lib/libQt5Gui.a F$:/QT/5.12.12/mingw73_64/lib/libQt5Core.a || player_autogen
+  FLAGS = -O3 -DNDEBUG
+  LINK_LIBRARIES = F:/QT/5.12.12/mingw73_64/lib/libQt5Widgets.a  -lavcodec  -lavdevice  -lavfilter  -lavformat  -lavutil  -lpostproc  -lswresample  -lswscale  F:/QT/5.12.12/mingw73_64/lib/libQt5Gui.a  F:/QT/5.12.12/mingw73_64/lib/libQt5Core.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LE:/CPP/ffmpeg4.4.4/lib
   OBJECT_DIR = CMakeFiles\player.dir
   POST_BUILD = cd .
@@ -126,7 +134,7 @@ build player_autogen: phony CMakeFiles/player_autogen player_autogen/mocs_compil
 # Custom command for CMakeFiles\player_autogen
 
 build CMakeFiles/player_autogen player_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}CMakeFiles/player_autogen ${cmake_ninja_workdir}player_autogen/mocs_compilation.cpp: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\CPP\Player\build && F:\Jetbrains\apps\CLion\ch-0\231.8109.222\bin\cmake\win\x64\bin\cmake.exe -E cmake_autogen E:/CPP/Player/build/CMakeFiles/player_autogen.dir/AutogenInfo.json Debug"
+  COMMAND = cmd.exe /C "cd /D E:\CPP\Player\build && F:\Jetbrains\apps\CLion\ch-0\231.8109.222\bin\cmake\win\x64\bin\cmake.exe -E cmake_autogen E:/CPP/Player/build/CMakeFiles/player_autogen.dir/AutogenInfo.json Release"
   DESC = Automatic MOC and UIC for target player
   restat = 1
 
@@ -166,7 +174,7 @@ build CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CM
 # Clean additional files.
 
 build CMakeFiles/clean.additional: CLEAN_ADDITIONAL
-  CONFIG = Debug
+  CONFIG = Release
 
 
 #############################################

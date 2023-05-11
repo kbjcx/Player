@@ -74,12 +74,18 @@
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
+		[
+			"E:/CPP/Player/video_player.h",
+			"MU",
+			"EWIEGA46WW/moc_video_player.cpp",
+			null
+		],
 		[ "E:/CPP/Player/widget.h", "MU", "EWIEGA46WW/moc_widget.cpp", null ]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "E:/CPP/Player/build/player_autogen/include",
 	"MOC_COMPILATION_FILE" : "E:/CPP/Player/build/player_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -128,6 +134,7 @@
 	"SOURCES" : 
 	[
 		[ "E:/CPP/Player/main.cpp", "MU", null ],
+		[ "E:/CPP/Player/video_player.cpp", "MU", null ],
 		[ "E:/CPP/Player/widget.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

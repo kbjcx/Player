@@ -17,7 +17,7 @@ find_package(Qt5 COMPONENTS
 include_directories(E:/CPP/ffmpeg4.4.4/include)
 link_directories(E:/CPP/ffmpeg4.4.4/lib)
 
-add_executable(player main.cpp widget.h widget.cpp)
+add_executable(player main.cpp widget.h widget.cpp video_player.h video_player.cpp)
 target_link_libraries(player
                       Qt5::Core
                       Qt5::Gui
