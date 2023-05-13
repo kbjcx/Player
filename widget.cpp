@@ -48,8 +48,8 @@ void Widget::paintEvent(QPaintEvent* event) {
         x /= 2;
         y /= 2;
 
-        painter.drawImage(0, 0, img); // 画出图像
-//        painter.drawImage(0,0,img);
+//        painter.drawImage(0, 0, img); // 画出图像
+        painter.drawImage(QPoint(x, y),img);
     }
 //    image_ = image_.scaled(this->size(), Qt::KeepAspectRatio)
 }

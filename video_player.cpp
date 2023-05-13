@@ -1,4 +1,5 @@
 #include "video_player.h"
+#include "QDebug"
 
 extern "C" {
 #include "libavcodec/avcodec.h"
@@ -20,7 +21,7 @@ void VideoPlayer::start_play() {
 void VideoPlayer::run() {
     printf("run \n");
 //    const char* file_path = filename_.toUtf8().data();
-    const char* file_path = "E:/CPP/Player/Source/test.mp4";
+    const char* file_path = "D:/CPP/Player/Source/test.mp4";
     printf("%s \n", file_path);
     int video_stream = -1;
     int ret = -1;
@@ -93,10 +94,10 @@ void VideoPlayer::run() {
                                          codec_context->pix_fmt,
                                          codec_context->width,
                                          codec_context->height,
-                                         AV_PIX_FMT_RGB24,
+                                         AV_PIX_FMT_RGB32,
                                          SWS_BICUBIC,
                                          nullptr, nullptr, nullptr);
-    int num_bytes = av_image_get_buffer_size(AV_PIX_FMT_RGB24,
+    int num_bytes = av_image_get_buffer_size(AV_PIX_FMT_RGB32,
                                              codec_context->width,
                                              codec_context->height,
                                              1);
@@ -108,7 +109,7 @@ void VideoPlayer::run() {
     uint8_t* out_buffer = (uint8_t*) av_malloc(num_bytes * sizeof(uint8_t));
     // TODO
     av_image_fill_arrays(frame_rgb->data, frame_rgb->linesize, out_buffer,
-                         AV_PIX_FMT_RGB24, codec_context->width,
+                         AV_PIX_FMT_RGB32, codec_context->width,
                          codec_context->height, 1);
     
     int y_size = codec_context->width * codec_context->height;
@@ -119,85 +120,122 @@ void VideoPlayer::run() {
     
     int index = 0;
     int read_end = 0;
+    int got_picture = 1;
     
-    while (true) {
-        if (read_end == 1) {
-            break;
+//    while (true) {
+//        if (read_end == 1) {
+//            break;
+//        }
+//
+//        ret = av_read_frame(format_context, packet);
+//        // 跳过非视频流
+//        if (packet->stream_index != video_stream) {
+//            av_packet_unref(packet);
+//        }
+//
+//        if (ret == AVERROR_EOF) {
+//            avcodec_send_packet(codec_context, packet);
+//            av_packet_unref(packet);
+//
+//            // 循环从解码器中读取数据
+//            while (true) {
+//                ret = avcodec_receive_frame(codec_context, frame);
+//                if (ret == AVERROR(EAGAIN)) {
+//                    break;
+//                }
+//                else if (ret == AVERROR_EOF) {
+////                    read_end = 1;
+//                    break;
+//                }
+//                else if (ret > 0) {
+//                    sws_scale(img_convert_context, (const uint8_t* const*)frame->data,
+//                              frame->linesize, 0, codec_context->height,
+//                              frame_rgb->data, frame_rgb->linesize);
+//
+//                    QImage tmp_img((uchar*)out_buffer, codec_context->width,
+//                                   codec_context->height,
+//                                   QImage::Format_RGB32);
+//                    printf("width %d height %d \n", tmp_img.width(), tmp_img.height());
+//                    QImage image = tmp_img.copy(tmp_img.rect());
+//                    printf("get frame \n");
+//                    emit signal_get_frame(image); // 发送信号
+//                }
+//                else {
+//                    printf("other error \n");
+//                    return;
+//                }
+//                msleep(500);
+//            }
+//        }
+//        else if (ret == 0) {
+//            while (avcodec_send_packet(codec_context, packet) == AVERROR(EAGAIN)) {
+//                printf("Receive_frame and send_packet both returned EAGAIN,"
+//                       "which is an API violation. \n");
+//                usleep(1000);
+//            }
+//            av_packet_unref(packet);
+//            while (true) {
+//                ret = avcodec_receive_frame(codec_context, frame);
+//                if (ret == AVERROR(EAGAIN)) {
+//                    break;
+//                }
+//                else if (ret == AVERROR_EOF) {
+////                    read_end = 1;
+//                    break;
+//                }
+//                else if (ret >= 0) {
+//                    sws_scale(img_convert_context, (const uint8_t* const*) frame->data,
+//                              frame->linesize, 0, frame->height,
+//                              frame_rgb->data, frame_rgb->linesize);
+//                    QImage tmp_img((uchar*)out_buffer, codec_context->width,
+//                                   codec_context->height,
+//                                   QImage::Format_RGB32);
+//                    printf("width %d height %d \n", tmp_img.width(), tmp_img.height());
+//                    QImage image = tmp_img.copy(tmp_img.rect());
+//                    printf("get frame \n");
+//                    emit signal_get_frame(image); // 发送信号
+//                }
+//                else {
+//                    printf("other error \n");
+//                    return;
+//                }
+//                msleep(500);
+//            }
+//            av_packet_unref(packet);
+//        }
+//    }
+    while (1)
+    {
+        if(av_read_frame(format_context, packet) < 0)
+        {
+            qDebug() << "index===============" << index;
+            break;//这里认为视频读取完了
         }
-        
-        ret = av_read_frame(format_context, packet);
-        // 跳过非视频流
-        if (packet->stream_index != video_stream) {
-            av_packet_unref(packet);
-        }
-        
-        if (ret == AVERROR_EOF) {
-            avcodec_send_packet(codec_context, packet);
-            av_packet_unref(packet);
-            
-            // 循环从解码器中读取数据
-            while (1) {
-                ret = avcodec_receive_frame(codec_context, frame);
-                if (ret == AVERROR(EAGAIN)) {
-                    break;
-                }
-                else if (ret == AVERROR_EOF) {
-                    read_end = 1;
-                    break;
-                }
-                else if (ret > 0) {
-                    sws_scale(img_convert_context, (const uint8_t* const*)frame->data,
-                              frame->linesize, 0, codec_context->height,
-                              frame_rgb->data, frame_rgb->linesize);
-                    
-                    QImage tmp_img((uchar*)out_buffer, codec_context->width,
-                                   codec_context->height,
-                                   QImage::Format_RGB32);
-                    const QImage& image = tmp_img;
-                    printf("get frame \n");
-                    emit signal_get_frame(image); // 发送信号
-                }
-                else {
-                    printf("other error \n");
-                    return;
-                }
-                msleep(500);
+        if(packet->stream_index == video_stream)
+        {
+            // TODO 将其改写为avcodec_send_packet和avcodec_receive_frame;
+            ret = avcodec_decode_video2(codec_context, frame, &got_picture, packet);
+            if(ret < 0)
+            {
+//                emit signalDecodeError(-6);
+                return;
+            }
+            if(got_picture)
+            {
+                sws_scale(img_convert_context, (uint8_t const * const *)frame->data,
+                          frame->linesize, 0, codec_context->height, frame_rgb->data,
+                          frame_rgb->linesize);
+                ++index;
+                //把这个RGB数据 用QImage加载
+                QImage tempImage((uchar*)out_buffer, codec_context->width, codec_context->height, QImage::Format_RGB32);
+                QImage image = tempImage.copy();//把图像复制一份 传递给界面显示
+                qDebug() << "image.width==" << image.width() << "image.height==" << image.height();
+                emit signal_get_frame(image);
+                //if (index > 10)
+                //    return; //这里我们就保存10张图片
             }
         }
-        else if (ret == 0) {
-            while (avcodec_send_packet(codec_context, packet) == AVERROR(EAGAIN)) {
-                printf("Receive_frame and send_packet both returned EAGAIN,"
-                       "which is an API violation. \n");
-                usleep(1000);
-            }
-            av_packet_unref(packet);
-            while (true) {
-                ret = avcodec_receive_frame(codec_context, frame);
-                if (ret == AVERROR(EAGAIN)) {
-                    break;
-                }
-                else if (ret == AVERROR_EOF) {
-                    read_end = 1;
-                    break;
-                }
-                else if (ret >= 0) {
-                    sws_scale(img_convert_context, (const uint8_t* const*) frame->data,
-                              frame->linesize, 0, frame->height,
-                              frame_rgb->data, frame_rgb->linesize);
-                    QImage tmp_img((uchar*)out_buffer, codec_context->width,
-                                   codec_context->height,
-                                   QImage::Format_RGB32);
-                    const QImage& image = tmp_img;
-                    printf("get frame \n");
-                    emit signal_get_frame(image); // 发送信号
-                }
-                else {
-                    printf("other error \n");
-                    return;
-                }
-                msleep(500);
-            }
-        }
+        av_packet_unref(packet);
     }
     av_packet_free(&packet);
     av_frame_free(&frame);

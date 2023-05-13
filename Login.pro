@@ -17,16 +17,16 @@ HEADERS += \
     widget.h\
     video_player.h
 
-INCLUDEPATH += E:/CPP/ffmpeg4.4.4/include
+INCLUDEPATH += D:/CPP/ffmpeg4.4.1/include
 
-LIBS += E:/CPP/ffmpeg4.4.4/lib/avcodec.lib \
-        E:/CPP/ffmpeg4.4.4/lib/avdevice.lib \
-        E:/CPP/ffmpeg4.4.4/lib/avfilter.lib \
-        E:/CPP/ffmpeg4.4.4/lib/avformat.lib \
-        E:/CPP/ffmpeg4.4.4/lib/avutil.lib \
-        E:/CPP/ffmpeg4.4.4/lib/postproc.lib \
-        E:/CPP/ffmpeg4.4.4/lib/swresample.lib \
-        E:/CPP/ffmpeg4.4.4/lib/swscale.lib
+LIBS += D:/CPP/ffmpeg4.4.1/lib/avcodec.lib \
+        D:/CPP/ffmpeg4.4.1/lib/avdevice.lib \
+        D:/CPP/ffmpeg4.4.1/lib/avfilter.lib \
+        D:/CPP/ffmpeg4.4.1/lib/avformat.lib \
+        D:/CPP/ffmpeg4.4.1/lib/avutil.lib \
+        D:/CPP/ffmpeg4.4.1/lib/postproc.lib \
+        D:/CPP/ffmpeg4.4.1/lib/swresample.lib \
+        D:/CPP/ffmpeg4.4.1/lib/swscale.lib
 
 # Default rules for deployment.
 qnx: target.path = ./
