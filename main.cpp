@@ -2,25 +2,16 @@
 #include <QPushButton>
 #include "widget.h"
 #include <QDebug>
-
-extern "C"{
-    #include <libavcodec//avcodec.h>
-    #include <libavformat/avformat.h>
-    #include <libavutil/pixfmt.h>
-    #include <libavutil/imgutils.h>
-    #include <libswscale/swscale.h>
-}
-
-#include "save_img.h"
+#include <QTextCodec>
 
 int main(int argc, char* argv[]) {
     QApplication a(argc, argv);
+    
+    QTextCodec* codec = QTextCodec::codecForName("UTF-8");
+    QTextCodec::setCodecForLocale(codec);
+    
     Widget w;
     w.show();
-    int version =avformat_version();
-    qDebug() << "version:" << version << endl;
-    
-   
     
     return QApplication::exec();
 }
