@@ -1,4 +1,0 @@
-E:/CPP/Player/build/CMakeFiles/player.dir
-E:/CPP/Player/build/CMakeFiles/edit_cache.dir
-E:/CPP/Player/build/CMakeFiles/rebuild_cache.dir
-E:/CPP/Player/build/CMakeFiles/player_autogen.dir
